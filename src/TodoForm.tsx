@@ -33,7 +33,7 @@ const TodoForm = ({ initialValues, onSubmit }: { initialValues?: Todo; onSubmit:
     form.resetFields();
   };
 
-  const validateEndDate = (_, value: moment.Moment | null) => {
+  const validateEndDate = (_ : any, value: moment.Moment | null) => {
     const startDate = form.getFieldValue('startDate');
     if (!startDate || !value) return Promise.resolve();
     return value.isBefore(startDate)
